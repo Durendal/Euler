@@ -11,19 +11,26 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+
 def main():
 	found = 0
-
+	
 	for a in range(1,1000):
+		sumval = 0
 		for b in range(1, 1000):
 			c = (a**2 + b**2)**.5
-			if a + b + c == 1000 and a < b < c:
-				found = 1
+			sys.stdout.write("\ra = %d, b = %d, c = %d       " % (a, b, c))
 			
+			if  a + b + c == 1000 and a < b < c < 1000:
+				found = 1
+				break
 		if found == 1:
-			print "The solution is: " + str(a) + "^2 + " + str(b) + "^2 = " + str(c**2)
-			print "The product of abc is: " + str(a*b*c)
+			print ""
+			print "The solution is: %d^2 + %d^2 = %d" % (a, b, c**2)
+			print "The product of abc is: %d" % (a*b*c)
 			break
+
 
 if __name__ in '__main__':
 	main()
