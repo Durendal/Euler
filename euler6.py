@@ -15,7 +15,6 @@ def squaresum(nums):
 
 def main():
 	nums = range(1,101)
-	print nums
 	sqsum = squaresum(nums)
 	sumsq = sumsquare(nums)
 	print "Square of sums: " + str(sqsum)
